@@ -2,13 +2,13 @@ _base_ = ['mmpose::_base_/default_runtime.py']
 
 # common setting
 num_keypoints = 133
-input_size = (288, 384)
+input_size = (192, 256)
 
 # runtime
 max_epochs = 420
 stage2_num_epochs = 150
 base_lr = 2e-3
-train_batch_size = 32
+train_batch_size = 64
 val_batch_size = 32
 
 train_cfg = dict(max_epochs=max_epochs, val_interval=10)
@@ -95,7 +95,7 @@ auto_scale_lr = dict(base_batch_size=512)
 codec = dict(
     type='SimCCLabel',
     input_size=input_size,
-    sigma=(6., 6.93),
+    sigma=(4.9, 5.66),
     simcc_split_ratio=2.0,
     normalize=False,
     use_dark=False)
@@ -126,7 +126,7 @@ model = dict(
             'rtmposev1/cspnext-l_udp-aic-coco_210e-256x192-273b7631_20230130.pth'  # noqa
         )),
     head=dict(
-        type='CIGHead',
+        type='CausalGraphHead',
         in_channels=1024,
         out_channels=num_keypoints,
         input_size=codec['input_size'],
@@ -135,8 +135,8 @@ model = dict(
         simcc_split_ratio=codec['simcc_split_ratio'],
         final_layer_kernel_size=7,
         gau_cfg=dict(
-            hidden_dims=512,
-            s=256,
+            hidden_dims=256,
+            s=128,
             expansion_factor=2,
             dropout_rate=0.,
             drop_path=0.,
@@ -157,8 +157,8 @@ model = dict(
         decoder=codec,
         gcn_cfg=dict(
             num_layers=1,
-            input_dim=512,
-            hidden_dim=512,
+            input_dim=256,
+            hidden_dim=256,
         ),
         cim_cfg=dict(
             intervention_strategy='topk', # 'topk' or 'threshold'
