@@ -1,4 +1,4 @@
-<h1 style="text-align:center;">Causal Intervention Graph Neural Network for Robust Whole-body Pose Estimation</h1>
+<h1 style="text-align:center;">Causal Intervention Graph Neural Network for Whole-Body Pose Estimation</h1>
 
 ### Results on COCO-WholeBody v1.0 val
 
