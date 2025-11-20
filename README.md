@@ -52,7 +52,7 @@ mim install "mmcv>=2.0.1"
 mim install "mmdet>=3.1.0"
 
 # 4. Clone this repository
-git clone https://github.com/anonymous/CIGPose.git
+git clone https://github.com/53mins/CIGPose.git
 cd CIGPose/mmpose
 pip install -v -e .
 ```
