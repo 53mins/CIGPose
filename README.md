@@ -1,5 +1,5 @@
 <div align="center">
-<h2>CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation </h2> 
+<h1>CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation </h1> 
 </div>
 
 ## 📊 Model Zoo & Results
