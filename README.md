@@ -3,7 +3,6 @@
 </div>
 
 ## 📊 Model Zoo & Results
-
 #### Results on COCO-WholeBody v1.0 val
 
 | Arch                                                   | Input Size | FLOPS (G) | Body AP | Foot AP | Face AP | Hand AP | Whole AP | ckpt                                       |
