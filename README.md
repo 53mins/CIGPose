@@ -5,7 +5,7 @@
 ## 📊 Model Zoo & Results
 #### Results on COCO-WholeBody v1.0 val
 
-| Arch                                                   | Input Size | FLOPS (G) | Body AP | Foot AP | Face AP | Hand AP | Whole AP | ckpt                                       |
+| Config                                                   | Input Size | FLOPS (G) | Body AP | Foot AP | Face AP | Hand AP | Whole AP | ckpt                                       |
 | ------------------------------------------------------ | ---------- | --------- | ------- | ------- | ------- | ------- | -------- | ------------------------------------------ |
 | [CIGPose-m](mmpose/projects/cigpose/wholebody_2d_keypoint/cigpose-m_8xb64-420e_coco-wholebody-256x192.py)       | 256x192    | 2.3       | 69.0    | 64.3    | 82.1    | 49.7    | 59.9     | [pth](https://drive.google.com/file/d/1GvTAyJGUIVI-5KWKRumqx1YH4dEjmwBv/view?usp=sharing) |
 | [CIGPose-l](mmpose/projects/cigpose/wholebody_2d_keypoint/cigpose-l_8xb64-420e_coco-wholebody-256x192.py)       | 256x192    | 4.6       | 71.2    | 69.0    | 83.3    | 54.0    | 62.6     | [pth](https://drive.google.com/file/d/1mC5GkU7v_M3tIi8NaDaKDrYvyde-ca2J/view?usp=sharing) |
@@ -17,7 +17,7 @@
 
 #### Results on COCO val2017
 
-| Arch                                                         | Input Size | FLOPS (G) | Params (M) | AP | AR | ckpt                                                         |
+| Config                                                         | Input Size | FLOPS (G) | Params (M) | AP | AR | ckpt                                                         |
 | ------------------------------------------------------------ | ---------- | --------- | ------- | ------- | ------- | ------------------------------------------------------------ |
 | [CIGPose-m](mmpose/projects/cigpose/body_2d_keypoint/cigpose-m_1xb384-420e_coco-256x192.py) | 256x192    | 1.9     | 14   | 76.6 | 79.3 | [pth](https://drive.google.com/file/d/1tNXidCKVhXqxT8WIYPEdSfIEownbIl5E/view?usp=sharing) |
 | [CIGPose-l](mmpose/projects/cigpose/body_2d_keypoint/cigpose-l_1xb256-420e_coco-256x192.py) | 256x192    | 4.2      | 28   | 77.6 | 80.3    | [pth](https://drive.google.com/file/d/1jsKXa4waJKkLFmF7IhWVA_xMBs5_61zr/view?usp=sharing) |
@@ -25,7 +25,7 @@
 
 #### Results on CrowdPose test set
 
-| Arch                                                         | Input Size | Params (M) | AP   | AP easy | AP medium | AP hard | ckpt                                                         |
+| Config                                                         | Input Size | Params (M) | AP   | AP easy | AP medium | AP hard | ckpt                                                         |
 | ------------------------------------------------------------ | ---------- | ---------- | ---- | ------- | --------- | ------- | ------------------------------------------------------------ |
 | [CIGPose-m](mmpose/projects/cigpose/body_2d_keypoint/cigpose-m_1xb64-210e_crowdpose-256x192.py) | 256x192    | 14.4       | 71.4 | 81.0    | 72.7      | 58.9    | [pth](https://drive.google.com/file/d/1nH_ONU-4CbaUs6xh20Jqhj_gHf_HFtmi/view?usp=sharing) |
 | [CIGPose-l](mmpose/projects/cigpose/body_2d_keypoint/cigpose-l_1xb64-210e_crowdpose-256x192.py) | 256x192    | 28.4       | 73.7 | 82.8    | 75.1      | 61.2    | [pth](https://drive.google.com/file/d/1_q2GlrZxOvtK2aQLx79G-B7h3s3kPLgM/view?usp=sharing) |
