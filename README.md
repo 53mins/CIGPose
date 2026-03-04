@@ -1,6 +1,58 @@
 <div align="center">
-<h1>CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation </h1> 
+<h1>CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation </h1>
 </div>
+
+## Abstract
+
+State-of-the-art whole-body pose estimators often lack robustness, producing anatomically implausible predictions in challenging scenes. We posit this failure stems from spurious correlations learned from visual context, a problem we formalize using a Structural Causal Model (SCM). The SCM identifies visual context as a confounder that creates a non-causal backdoor path, corrupting the model's reasoning. We introduce the **C**ausal **I**ntervention **G**raph **Pose** (CIGPose) framework to address this by approximating the true causal effect between visual evidence and pose. The core of CIGPose is a novel Causal Intervention Module: it first identifies confounded keypoint representations via predictive uncertainty and then replaces them with learned, context-invariant canonical embeddings. These deconfounded embeddings are processed by a hierarchical graph neural network that reasons over the human skeleton at both local and global semantic levels to enforce anatomical plausibility. Extensive experiments show CIGPose achieves a new state-of-the-art on COCO-WholeBody. Notably, our CIGPose-x model achieves 67.0% AP, surpassing prior methods that rely on extra training data. With the additional UBody dataset, CIGPose-x is further boosted to 67.5% AP, demonstrating superior robustness and data efficiency.
+
+## 📄 Table of Contents
+
+- [📖 Introduction](#introduction)
+- [🖼️ Visualizations](#visualizations)
+- [📊 Model Zoo & Results](#model-zoo--results)
+- [🛠️ Installation](#installation)
+- [🏃 Usage](#usage)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📄 License](#license)
+
+## 📖 Introduction
+
+CIGPose is a whole-body pose estimation framework that improves robustness in challenging scenes (e.g., occlusion, clutter, difficult lighting) by explicitly addressing **visual confounding** via a causal perspective.
+
+It is implemented as an [MMPose](https://github.com/open-mmlab/mmpose) project under `mmpose/projects/cigpose`.
+
+- **Causal formulation**: Model visual context as a confounder and target the interventional distribution `P(Y|do(F))` instead of the observational `P(Y|F)`.
+- **Causal Intervention Module (CIM)**: Use predictive uncertainty to identify confounded keypoint embeddings and replace them with learned, context-invariant **canonical embeddings**.
+- **Hierarchical graph reasoning**: Perform local (intra-part) and global (inter-part) message passing on deconfounded embeddings to enforce anatomical plausibility.
+
+## 🖼️ Visualizations
+
+### 1) Overall results + typical failure case of confounding
+
+<div align="center">
+  <img src="resources/result_contrast.png" width="100%" />
+</div>
+
+- **(a) Quantitative comparison** on COCO-WholeBody val: CIGPose achieves strong accuracy while remaining data-efficient.
+- **(b) Qualitative comparison** vs. RTMPose-x: baseline predictions may latch onto spurious background cues; CIGPose mitigates this by intervening on confounded keypoint representations, producing more anatomically plausible poses.
+
+### 2) Qualitative comparison on challenging scenes
+
+<div align="center">
+  <img src="resources/contrast.png" width="100%" />
+</div>
+
+- **From left to right**: input image, RTMPose-x, CIGPose-x.
+- CIGPose is more robust under common confounders (e.g., occlusion and clutter), yielding cleaner and more coherent whole-body structures.
+
+### 3) More qualitative results
+
+<div align="center">
+  <img src="resources/more_contrast.png" width="100%" />
+</div>
+
+- Additional examples further illustrating the robustness gains and improved anatomical consistency brought by causal intervention + hierarchical graph reasoning.
 
 ## 📊 Model Zoo & Results
 #### Results on COCO-WholeBody v1.0 val
@@ -79,3 +131,12 @@ bash tools/dist_train.sh mmpose/projects/cigpose/wholebody_2d_keypoint/cigpose-l
 ```
 bash tools/dist_test.sh mmpose/projects/cigpose/wholebody_2d_keypoint/cigpose-l_8xb32-420e_coco-wholebody-384x288.py path/to/checkpoint.pth
 ```
+
+------
+## 🙏 Acknowledgements
+
+- This project is built on top of [MMPose](https://github.com/open-mmlab/mmpose), and follows its training/testing utilities and dataset conventions.
+
+## 📄 License
+
+This project is released under the [LICENSE](LICENSE).
