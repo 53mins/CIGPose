@@ -1,5 +1,11 @@
 <div align="center">
 <h1>CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation </h1>
+<p>
+  <a href="https://53mins.github.io/BohaoLi/">Bohao Li</a> &nbsp;|&nbsp; Zhicheng Cao &nbsp;|&nbsp; Huixian Li &nbsp;|&nbsp; Yangming Guo
+</p>
+<p>
+  <a href="https://arxiv.org/abs/2603.09418">Paper (arXiv:2603.09418)</a>
+</p>
 </div>
 
 ## Abstract
@@ -15,6 +21,7 @@ State-of-the-art whole-body pose estimators often lack robustness, producing ana
 - [🏃 Usage](#usage)
 - [🙏 Acknowledgements](#acknowledgements)
 - [📄 License](#license)
+- [📚 Citation](#citation)
 
 ## 📖 Introduction
 
@@ -140,3 +147,16 @@ bash tools/dist_test.sh mmpose/projects/cigpose/wholebody_2d_keypoint/cigpose-l_
 ## 📄 License
 
 This project is released under the [LICENSE](LICENSE).
+
+## 📚 Citation
+
+If you find CIGPose useful in your research, please consider citing:
+
+```bibtex
+@article{li2026cigpose,
+  title={CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation},
+  author={Li, Bohao and Cao, Zhicheng and Li, Huixian and Guo, Yangming},
+  journal={arXiv preprint arXiv:2603.09418},
+  year={2026}
+}
+```
