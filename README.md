@@ -4,7 +4,7 @@
   <a href="https://53mins.github.io/BohaoLi/">Bohao Li</a> &nbsp;|&nbsp; Zhicheng Cao &nbsp;|&nbsp; Huixian Li &nbsp;|&nbsp; Yangming Guo
 </p>
 <p>
-  <a href="https://arxiv.org/abs/2603.09418">Paper (arXiv:2603.09418)</a>
+  <a href="https://arxiv.org/pdf/2603.09418">Paper (arXiv:2603.09418)</a>
 </p>
 </div>
 
