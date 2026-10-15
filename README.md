@@ -153,12 +153,10 @@ This project is released under the [LICENSE](LICENSE).
 If you find CIGPose useful in your research, please consider citing:
 
 ```bibtex
-@InProceedings{Li_2026_CVPR,
-    author    = {Li, Bohao and Cao, Zhicheng and Li, Huixian and Guo, Yangming},
-    title     = {CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2026},
-    pages     = {23484-23494}
+@inproceedings{li2026cigpose,
+  title={CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation},
+  author={Li, Bohao and Cao, Zhicheng and Li, Huixian and Guo, Yangming},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
 }
 ```
